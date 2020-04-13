@@ -20,14 +20,14 @@ const notFound = (req, res) => {
 const getHome = (req, res) => {
   res.statusCode = 200;
   res.statusMessage = 'works';
-  res.write('hellow world');
+  res.write('<h1> hallow App</h1>');
   res.end();
 };
 const getCars = (req, res) => {
   res.statusCode = 200;
   res.statusMessage = 'works';
-  res.write('hellow cars');
-  res.end('ok');
+  res.write('<h1> hallow cars</h1>');
+  res.end();
 };
 class httpServer {
   constructor() {}
