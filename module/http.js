@@ -1,19 +1,37 @@
 const http = require('http');
 const server = http.createServer((req, res) => {
-  createServer(req, res);
+  handlerPetitions(req, res);
 });
 
-const createServer = (req, res) => {
-  if (req.url === '/') {    
-    res.setHeader('Content-Type', 'text/html');
-    res.setHeader('Set-Cookie', ['type=ninja', 'language=javascript']);
-    res.write('hellow world');
-    res.end();
+const handlerPetitions = (req, res) => {
+  if (req.url == '/') {
+    getHome(req, res);
+  } else if (req.url == '/cars') {
+    getCars(req, res);
+  } else {
+    notFound(req, res);
   }
+};
+const notFound = (req, res) => {
+  res.statusCode = 404;
+  res.write('no encontrado');
+  res.end('ko');
+};
+const getHome = (req, res) => {
+  res.statusCode = 200;
+  res.statusMessage = 'works';
+  res.write('hellow world');
+  res.end();
+};
+const getCars = (req, res) => {
+  res.statusCode = 200;
+  res.statusMessage = 'works';
+  res.write('hellow cars');
+  res.end('ok');
 };
 class httpServer {
   constructor() {}
-    
+
   createConnection() {
     server.on('connection', (socket) => {
       console.log('nueva conexion detectada');

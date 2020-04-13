@@ -11,7 +11,7 @@ const argument = {
     id: 0,
     txt: 'my Text'
 };
-
+/*
 console.log(sum.sumNumb(numA,numB));
 console.log(multi.multi(numA,numB));
 
@@ -22,6 +22,7 @@ emitter.CEventEmitter.publishEvent(event);
 
 emitter.CEventEmitter.listenEventWithArgument(event);
 emitter.CEventEmitter.publishEventWithArgument(event, argument);
+*/
 
 http.httpServer.createConnection();
 http.httpServer.listen();
