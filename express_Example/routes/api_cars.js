@@ -1,7 +1,24 @@
 const express = require('express');
-const app = express(express.json());
+const router = express.Router();
 
-const cars = [
+router.get('/list', (req, res) => {
+  res.send(carsList);
+});
+
+router.get('/id/:id', (req, res) => {
+  const data = carsList.find((car) => car.id === parseInt(req.params.id));
+  if (!data) {
+    res.status(404);
+    res.send({});
+    return;
+  }
+  res.send(data);
+});
+
+
+
+
+const carsList = [
   {
     id: 1,
     Name: 'chevrolet chevelle malibu',
@@ -76,20 +93,4 @@ const cars = [
   },
 ];
 
-app.get('/api/cars/list', (req, res) => {
-  res.send(cars);
-});
-
-app.get('/api/cars/id/:id', (req, res) => {
-  const data = cars.find((car) => car.id === parseInt(req.params.id));
-  if (!data) {
-    res.status(404);
-    res.send({});
-    return;
-  }
-  res.send(data);
-});
-
-
-exports.getCarsList = getCarsList;
-exports.GetCarById = getCarById;
+module.exports = router;

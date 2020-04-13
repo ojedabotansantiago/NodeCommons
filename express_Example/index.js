@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express(express.json());
-
-//const apiCars = require('./Apis/Api_Cars');
-
+const apiCars = require('./routes/api_cars');
+app.use('/api/cars/', apiCars);
 /* middleware*/
 // app.use((req, res, next) => {
 //   console.log('time', Date.now());
@@ -22,14 +21,11 @@ app.listen(port, (req, res) => {
   console.log(`Example app listening on port ${port}!`);
 });
 
-gethome = () => {
-  app.get('/', (req, res) => {
-    res.send('Hello App!');
-  });
-};
 
-app.get('/api/cars/list', (req, res) => {
-  res.send(cars);
+app.get('/', (req, res) => {
+  res.send('Hello App!');
 });
+
+
 
 
