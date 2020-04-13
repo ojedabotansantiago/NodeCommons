@@ -1,0 +1,12 @@
+{
+  "name": "nodesomethings",
+  "version": "1.0.0",
+  "description": "cositas nodejs",
+  "main": "module/app.js",
+  "scripts": {
+    "test": "test",
+    "run": "node module/app.js"
+  },
+  "author": "santiago ojeda botan",
+  "license": "ISC"
+}
