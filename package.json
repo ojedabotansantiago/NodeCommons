@@ -2,11 +2,14 @@
   "name": "nodesomethings",
   "version": "1.0.0",
   "description": "cositas nodejs",
-  "main": "module_Examples/app.js",
+  "main": "express_Example/app.js",
   "scripts": {
     "test": "test",
-    "run": "node module_Examples/app.js"
+    "run": "node express_Example/app.js"
   },
   "author": "santiago ojeda botan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
