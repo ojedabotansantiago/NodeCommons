@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express(express.json());
+
+const cValidators = require('js_regex_librarie');
+cValidators.emailValidator('asd@asd.com');
 /* middleware */
 cacheMiddleWare = require('./midelwares/cacheMidelWare');
 app.use(cacheMiddleWare.cacheManager());
@@ -18,5 +21,3 @@ app.listen(port, (req, res) => {
 app.get('/', (req, res) => {
   res.send('Hello App!');
 });
-
-cacheMiddleWare.cacheManager();
