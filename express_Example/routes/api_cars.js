@@ -16,8 +16,6 @@ router.get('/id/:id', (req, res) => {
 });
 
 
-
-
 const carsList = [
   {
     id: 1,
